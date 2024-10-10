@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFChamp</title>
+    <link rel = "stylesheet" type="text/css" href="cssheader.css">
 
     <!-- Úlitima versão compilada e minimizada CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +24,12 @@
         });
     </script>
 
+    <?php 
+        if (isset($_GET["pagina"])){
+            $pagina = $_GET["pagina"];
+        }
+    ?>
+
 </head>
 <body class="bg-dark text-light">
 
@@ -36,25 +43,28 @@
 
     <!-- Barra de Navegação do Sistema -->
     <nav class="navbar navbar-expand-sm bg-success navbar-dark sticky-top">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.php" title="Ir para a Página Inicial">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#formCampeonato.php" title="Cadastrar Campeonato">Cadastrar Campeonato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="formLogin.php" title="Acessar o Sistema">Login</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto"> <!-- Alinhamento à esquerda -->
+                <li class="nav-item">
+
+                    <a class="nav-link" <?php if($pagina=='index'){ echo "style='color:yellow'";} ?>href="index.php?pagina=index" title="Ir para a Página Inicial">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" <?php if($pagina=='formCampeonato'){ echo "style='color:yellow'";} ?>href="formCampeonato.php?pagina=formCampeonato" href="formCampeonato.php" title="Cadastrar Campeonato">Cadastrar Campeonato</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" <?php if($pagina=='formLogin'){ echo "style='color:yellow'";} ?>href="formLogin.php?pagina=formLogin" href="formLogin.php" title="Acessar o Sistema">Login</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Container PRINCIPAL do Sistema-->
     <div class="container mt-5 bg-dark">

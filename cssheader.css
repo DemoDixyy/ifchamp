@@ -1,0 +1,61 @@
+body {
+    background-color: #0f2544; /* Um tom escuro para o fundo */
+}
+
+.container-fluid {
+    padding: 20px 0; /* Adiciona padding ao container do logotipo */
+}
+
+.container-fluid img {
+    transition: transform 0.3s; /* Transição suave ao passar o mouse */
+}
+
+.container-fluid img:hover {
+    transform: scale(1.1); /* Aumenta a logo ao passar o mouse */
+}
+
+h1 {
+    font-size: 2.5rem; /* Tamanho da fonte do título */
+    margin-top: 10px; /* Margem acima do título */
+    color: #0d2256; /* Cor verde */
+}
+
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil na barra de navegação */
+}
+
+.navbar .nav-link {
+    font-weight: bold; /* Texto em negrito */
+    transition: color 0.3s; /* Transição suave para a cor do texto */
+}
+
+.navbar .nav-link:hover {
+    color: #ffc107; /* Cor dourada ao passar o mouse */
+}
+
+.navbar .nav-link.active {
+    color: #ffc107; /* Cor ativa da navegação */
+}
+
+.navbar-toggler {
+    border: none; /* Remove a borda do botão de toggle */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffc107; /* Cor do ícone do toggle */
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem; /* Reduz o tamanho da fonte em telas pequenas */
+    }
+}
+
+.navbar .nav-link {
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: #ffc107; /* Cor ao passar o mouse */
+}
