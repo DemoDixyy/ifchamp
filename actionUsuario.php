@@ -105,7 +105,7 @@
         if(!$erroPreenchimento && !$erroUpload){
 
             //Armazena a QUERY na variável $inserirUsuario
-            $inserirUsuario = "INSERT INTO Usuarios (matriculaUsuario, fotoUsuario, nomeUsuario, cursoUsuario, emailUsuario, senhaUsuario) VALUES ('$matriculaUsuario', '$fotoUsuario', '$nomeUsuario', '$cursoUsuario', '$emailUsuario', '$senhaUsuario')";
+            $inserirUsuario = "INSERT INTO Usuario (matriculaUsuario, fotoUsuario, nomeUsuario, cursoUsuario, emailUsuario, senhaUsuario) VALUES ('$matriculaUsuario', '$fotoUsuario', '$nomeUsuario', '$cursoUsuario', '$emailUsuario', '$senhaUsuario')";
 
             //Inclui o arquivo de conexao com o banco de dados
             include "conexaoBD.php";
