@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/09/2024 às 19:20
+-- Tempo de geração: 10-Out-2024 às 22:49
 -- Versão do servidor: 8.0.26
--- Versão do PHP: 8.0.10
+-- versão do PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Estrutura da tabela `campeonatos`
+--
+
+CREATE TABLE `campeonatos` (
+  `idCampeonato` int NOT NULL,
+  `fotoCampeonato` varchar(255) DEFAULT NULL,
+  `nomeCampeonato` varchar(100) NOT NULL,
+  `descricaoCampeonato` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `categoriaCampeonato` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `campeonatos`
+--
+
+INSERT INTO `campeonatos` (`idCampeonato`, `fotoCampeonato`, `nomeCampeonato`, `descricaoCampeonato`, `categoriaCampeonato`) VALUES
+(1, 'img/Captura de Tela (21).png', 'Valorant', 'adsdaa', 'alimentos'),
+(2, 'img/Captura de Tela (21).png', 'Valorant', 'sadd', 'alimentos'),
+(3, 'img/Captura de Tela (21).png', 'Valorant', 'sadd', 'alimentos'),
+(4, 'img/Captura de Tela (21).png', 'Valorant', 'sadd', 'alimentos'),
+(5, 'img/Captura de Tela (21).png', 'Valorant', 'sadd', 'alimentos'),
+(6, 'img/Captura de Tela (21).png', 'Valorant', 'sadd', 'alimentos');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -37,7 +63,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`matriculaUsuario`, `fotoUsuario`, `nomeUsuario`, `cursoUsuario`, `emailUsuario`, `senhaUsuario`) VALUES
@@ -48,10 +74,26 @@ INSERT INTO `usuarios` (`matriculaUsuario`, `fotoUsuario`, `nomeUsuario`, `curso
 --
 
 --
--- Índices de tabela `usuarios`
+-- Índices para tabela `campeonatos`
+--
+ALTER TABLE `campeonatos`
+  ADD PRIMARY KEY (`idCampeonato`);
+
+--
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`matriculaUsuario`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `campeonatos`
+--
+ALTER TABLE `campeonatos`
+  MODIFY `idCampeonato` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
